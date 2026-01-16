@@ -8,6 +8,9 @@
       git = {
         gitconfig = ./git/gitconfig;
       };
+      zsh = {
+        p10k = ./zsh/p10k.zsh;
+      };
     };
   };
 }
