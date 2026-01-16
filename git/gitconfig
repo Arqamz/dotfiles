@@ -1,0 +1,38 @@
+[user]
+	name = Arqam Zia
+	email = arqam.mzia@gmail.com
+	signingkey = 26A1597BAAE78B86
+
+[signing]
+	gpgSign = true
+
+[commit]
+	gpgSign = true
+
+[alias]
+	f  = fetch
+	l  = log --graph --oneline --all --decorate
+	lg = log --graph
+	aa = add -A
+	s  = status
+	ss = "!f() { git status --short | sort | awk 'function color(code) { if (code ~ /\\?\\?/) return \"\\033[36m\"; else if (code ~ /A/) return \"\\033[32m\"; else if (code ~ /M/) return \"\\033[33m\"; else if (code ~ /D/) return \"\\033[31m\"; else if (code ~ /U/) return \"\\033[35m\"; else return \"\\033[0m\" } BEGIN{prev=\"\"} {code=$1; file=$2; split(file, path, \"/\"); dir=path[1]; if (dir != prev) { print \"\\033[1m\\n\" dir \"/\\033[0m\"; prev=dir } printf \"  %s%s\\033[0m %s\\n\", color(code), code, file }'; }; f"
+	co = checkout
+	br = branch
+	c  = commit -m
+	ca = commit -a -m
+	cmnd = commit --amend
+	pl = pull
+	ps = push
+	rb = rebase
+	rc = rebase --continue
+	st = stash
+	reset = reset HEAD --
+	amend = commit --amend
+[init]
+        defaultBranch = main
+
+[push]
+        autoSetupRemote = true
+
+[pull]
+	rebase = true
